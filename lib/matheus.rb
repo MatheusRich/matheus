@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "matheus/version"
+require "zeitwerk"
+
+Zeitwerk::Loader.for_gem.setup
 
 module Matheus
-  class Error < StandardError; end
 end
