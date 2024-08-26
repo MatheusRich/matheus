@@ -7,10 +7,10 @@ module Matheus
   #    $ date-of-last monday
   #    2022-01-24
   class DateOfLast < Command
-    def call(day_name)
-      day_name = day_name.to_s
+    def call(args)
+      day_name = args[0].to_s
 
-      target_wday = wday_for(day_name) or return Failure("invalid day name: #{day_name}")
+      target_wday = wday_for(day_name) or return Failure("invalid day name: #{day_name.inspect}")
       date = Enumerator.produce(Date.today - 1, &:prev_day).find { _1.wday == target_wday }
 
       puts date
