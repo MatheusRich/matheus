@@ -1,6 +1,21 @@
 ## [Unreleased]
 
-## [0.1.0] - 2024-02-19
+## [0.2.0]
+
+_Released 2024-08-26_
+
+- Add `q` command to ask an question to an LLM
+
+```sh
+$ q "What is the capital of France?"
+The capital of France is **Paris**
+```
+
+- Automatically generate executables for the commands when the gem builds.
+
+## [0.1.0]
+
+_Released 2024-02-19_
 
 - Initial release. It includes the commands:
 
