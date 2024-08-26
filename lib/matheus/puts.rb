@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 require "date"
-require "active_support"
-require "active_support/core_ext"
 
 module Matheus
+  # Usage:
+  #    $ puts "Date.today"
+  #    2024-08-26
   class Puts < Command
     def call(argv)
       puts eval(argv.join(" ")) # standard:disable Security/Eval
