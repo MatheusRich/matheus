@@ -21,7 +21,7 @@ module Matheus
 
       response = client.chat(
         parameters: {
-          model: "gpt-4o-mini", # using gpt-4o model
+          model: "gpt-4o-mini",
           messages: [{role: "user", content: "#{BASE_PROMPT}#{question}"}]
         }
       )
@@ -29,6 +29,8 @@ module Matheus
       raise response["error"]["message"] if response.has_key?("error")
 
       response.dig("choices", 0, "message", "content")
+    rescue Faraday::ClientError => error
+      raise error.response_body.dig("error", "message") || error
     end
 
     def print_markdown(text)
