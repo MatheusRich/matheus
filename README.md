@@ -11,7 +11,7 @@ A bunch of CLI tools I made for my own use.
 ### `alert-me`
 
 ```sh
-$ alert-me sleep 1 && echo "Done!"
+$ alert-me 'sleep 1 && echo "Done!"'
 Done!
 # plays a sound after the command finishes
 ```
