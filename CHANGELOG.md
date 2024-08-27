@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Add `alert-me` command.
+
 ## [0.2.0]
 
 _Released 2024-08-26_
