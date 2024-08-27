@@ -45,3 +45,5 @@ end
 
 # Ensure the generate_executables task runs before the build task
 task build: :generate_executables
+# Ensure tests are run before releasing the gem
+task release: :spec
