@@ -6,6 +6,36 @@ A bunch of CLI tools I made for my own use.
 
     $ gem install matheus
 
+## Usage
+
+### `alert-me`
+
+```sh
+$ alert-me sleep 1 && echo "Done!"
+Done!
+# plays a sound after the command finishes
+```
+
+### `q`
+
+It expects a OPENAI_API_KEY environment variable to be set. It will try to load
+it from a `.env` file at `~/.env`.
+
+```sh
+$ q "What is the capital of France?"
+The capital of France is **Paris**
+```
+
+### `puts`
+
+It evaluates the given Ruby code and prints the result. Active Support is
+available.
+
+```sh
+$ puts 10.days.ago
+2024-08-17 15:50:11 -0300
+```
+
 ## Contributing
 
 Probably not accepting contributions at the moment, but feel free to open an issue if you have any ideas or suggestions.
