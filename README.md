@@ -16,6 +16,18 @@ Done!
 # plays a sound after the command finishes
 ```
 
+### `date-of-last`
+
+Prints the date of the last week day.
+
+```sh
+$ date-of-last monday
+2024-02-12
+
+$ date-of-last sun
+2024-02-11
+```
+
 ### `q`
 
 It expects a OPENAI_API_KEY environment variable to be set. It will try to load
