@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.4.0]
+
+_Released 2024-10-02_
+
 - Save past questions with `q` and retrieve them with the `qs` command.
 - Reuse answers for the same questions.
 
