@@ -1,6 +1,7 @@
 ## [Unreleased]
 
 - Save past questions with `q` and retrieve them with the `qs` command.
+- Reuse answers for the same questions.
 
 ## [0.3.0]
 

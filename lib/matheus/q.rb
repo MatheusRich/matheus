@@ -1,5 +1,6 @@
 require "openai"
 require "tty-markdown"
+require "tty-prompt"
 require "json"
 
 module Matheus
@@ -11,9 +12,16 @@ module Matheus
 
     def call(question)
       question = question.join(" ")
-      answer = ask_llm(question)
+      existing_entry = search_question_in_history(question)
+
+      if existing_entry && use_existing_answer?
+        answer = existing_entry['answer']
+      else
+        answer = ask_llm(question)
+        save_qa(question, answer)
+      end
+
       print_markdown(answer)
-      save_qa(question, answer)
     rescue => e
       Failure(e.message)
     end
@@ -53,6 +61,17 @@ module Matheus
 
     def load_history
       File.exist?(QUESTION_HISTORY_FILE) ? JSON.parse(File.read(QUESTION_HISTORY_FILE)) : []
+    end
+
+    def search_question_in_history(question)
+      load_history.reverse.find { |entry| entry['question'].downcase.strip == question.downcase.strip }
+    end
+
+    def use_existing_answer?
+      prompt = TTY::Prompt.new
+      prompt.yes?("An existing answer was found. Do you want to use it?") do |q|
+        q.default true
+      end
     end
   end
 end
