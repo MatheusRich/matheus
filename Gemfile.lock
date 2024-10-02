@@ -6,6 +6,8 @@ PATH
       dotenv (~> 3.1.2)
       ruby-openai (~> 7.1.0)
       tty-markdown (~> 0.7.2)
+      tty-prompt
+      tty-table
       zeitwerk (~> 2.6.17)
 
 GEM
@@ -119,6 +121,7 @@ GEM
     strings-ansi (0.2.0)
     strscan (3.1.0)
     tty-color (0.6.0)
+    tty-cursor (0.7.1)
     tty-markdown (0.7.2)
       kramdown (>= 1.16.2, < 3.0)
       pastel (~> 0.8)
@@ -126,12 +129,24 @@ GEM
       strings (~> 0.2.0)
       tty-color (~> 0.5)
       tty-screen (~> 0.8)
+    tty-prompt (0.23.1)
+      pastel (~> 0.8)
+      tty-reader (~> 0.8)
+    tty-reader (0.9.0)
+      tty-cursor (~> 0.7)
+      tty-screen (~> 0.8)
+      wisper (~> 2.0)
     tty-screen (0.8.2)
+    tty-table (0.12.0)
+      pastel (~> 0.8)
+      strings (~> 0.2.0)
+      tty-screen (~> 0.8)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
     unicode_utils (1.4.0)
     uri (0.13.0)
+    wisper (2.0.1)
     zeitwerk (2.6.17)
 
 PLATFORMS

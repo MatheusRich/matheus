@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Save past questions with `q` and retrieve them with the `qs` command.
+
 ## [0.3.0]
 
 _Released 2024-08-27_

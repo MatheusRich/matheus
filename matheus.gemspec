@@ -36,6 +36,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activesupport", "~> 7.2.0"
   spec.add_dependency "ruby-openai", "~> 7.1.0"
   spec.add_dependency "tty-markdown", "~> 0.7.2"
+  spec.add_dependency "tty-table", "~> 0.12.0"
+  spec.add_dependency "tty-prompt", "~> 0.23.1"
   spec.add_dependency "dotenv", "~> 3.1.2"
 
   # For more information and examples about making a new gem, check out our
