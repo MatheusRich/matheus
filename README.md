@@ -1,6 +1,6 @@
 # Matheus
 
-A bunch of CLI tools I made for my own use.
+A collection of CLI tools I made for my own use.
 
 ## Installation
 
@@ -8,12 +8,11 @@ A bunch of CLI tools I made for my own use.
 
 ## Usage
 
-### `alert-me`
+### [`alert-me`](./lib/matheus/alert_me.rb)
 
 ```sh
 $ alert-me 'sleep 1 && echo "Done!"'
 Done!
-# plays a sound after the command finishes
 ```
 
 ### [`convert-currency`](./lib/matheus/convert_currency.rb)
@@ -23,7 +22,7 @@ $ convert-currency usd eur
 1 USD = 0.92 EUR
 ```
 
-### `date-of-last`
+### [`date-of-last`](./lib/matheus/date_of_last.rb)
 
 Prints the date of the last week day.
 
@@ -35,7 +34,7 @@ $ date-of-last sun
 2024-02-11
 ```
 
-### `q`
+### [`q`](./lib/matheus/q.rb)
 
 It expects a OPENAI_API_KEY environment variable to be set. It will try to load
 it from a `.env` file at `~/.env`.
@@ -45,7 +44,7 @@ $ q "What is the capital of France?"
 The capital of France is **Paris**
 ```
 
-### `puts`
+### [`puts`](./lib/matheus/puts.rb)
 
 It evaluates the given Ruby code and prints the result. Active Support is
 available.
