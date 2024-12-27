@@ -16,6 +16,13 @@ Done!
 # plays a sound after the command finishes
 ```
 
+### [`convert-currency`](./lib/matheus/convert_currency.rb)
+
+```sh
+$ convert-currency usd eur
+1 USD = 0.92 EUR
+```
+
 ### `date-of-last`
 
 Prints the date of the last week day.

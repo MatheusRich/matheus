@@ -1,3 +1,7 @@
+require 'net/http'
+require 'json'
+require 'date'
+
 module Matheus
   class AlertMe < Command
     # Usage:

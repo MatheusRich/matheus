@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.5.0]
+
+_Released 2024-12-27_
+
+- Add `convert-currency` command.
+
 ## [0.4.0]
 
 _Released 2024-10-02_
