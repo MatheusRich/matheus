@@ -1,6 +1,6 @@
-require 'net/http'
-require 'json'
-require 'date'
+require "net/http"
+require "json"
+require "date"
 
 module Matheus
   # Usage:
@@ -12,7 +12,7 @@ module Matheus
       target = args.fetch(1) { raise "Missing target currency" }
       date = args.fetch(2, Date.today)
 
-      api_url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/#{source}.min.json"
+      api_url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@#{date}/v1/currencies/#{source}.min.json"
 
       data = JSON.parse(Net::HTTP.get(URI(api_url)))
       rate = data.dig(source.downcase, target.downcase)
