@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    matheus (0.4.0)
+    matheus (0.5.0)
       activesupport (~> 7.2.0)
       dotenv (~> 3.1.2)
       ruby-openai (~> 7.1.0)
