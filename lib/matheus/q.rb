@@ -15,7 +15,7 @@ module Matheus
       existing_entry = search_question_in_history(question)
 
       if existing_entry && use_existing_answer?
-        answer = existing_entry['answer']
+        answer = existing_entry["answer"]
       else
         answer = ask_llm(question)
         save_qa(question, answer)
@@ -55,7 +55,7 @@ module Matheus
 
     def save_qa(question, answer)
       history = load_history
-      history << { question:, answer:, timestamp: Time.now.to_s }
+      history << {question:, answer:, timestamp: Time.now.to_s}
       File.write(QUESTION_HISTORY_FILE, JSON.pretty_generate(history))
     end
 
@@ -64,7 +64,7 @@ module Matheus
     end
 
     def search_question_in_history(question)
-      load_history.reverse.find { |entry| entry['question'].downcase.strip == question.downcase.strip }
+      load_history.reverse.find { |entry| entry["question"].downcase.strip == question.downcase.strip }
     end
 
     def use_existing_answer?

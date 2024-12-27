@@ -17,12 +17,12 @@ module Matheus
     end
 
     private
+
     def choices
       history.map do |entry|
-        {entry['question'] => entry['answer'] }
+        {entry["question"] => entry["answer"]}
       end
     end
-
 
     def history
       @history ||= File.exist?(QUESTION_HISTORY_FILE) ? JSON.parse(File.read(QUESTION_HISTORY_FILE)) : []
