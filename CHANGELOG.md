@@ -1,5 +1,14 @@
 ## [Unreleased]
 
+## [0.6.0]
+
+_Released 2025-01-07_
+
+- Allow specifying values on `convert-currency` command.
+```sh
+$ convert-currency 100 usd eur
+```
+
 ## [0.5.0]
 
 _Released 2024-12-27_
