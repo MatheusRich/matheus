@@ -8,7 +8,7 @@ RSpec.describe Matheus::ConvertCurrency do
         command = described_class.new
         today = Date.new(2024, 3, 7)
         allow(Date).to receive(:today).and_return(today)
-        stub_currency_api("2024-03-07", "usd", { "eur" => 0.92 })
+        stub_currency_api("2024-03-07", "usd", {"eur" => 0.92})
 
         expect { command.call(["100", "usd", "eur"]) }
           .to output("100.00 USD = 92.00 EUR\n").to_stdout
@@ -16,7 +16,7 @@ RSpec.describe Matheus::ConvertCurrency do
 
       it "converts the amount using specific date" do
         command = described_class.new
-        stub_currency_api("2024-03-01", "usd", { "eur" => 0.90 })
+        stub_currency_api("2024-03-01", "usd", {"eur" => 0.90})
 
         expect { command.call(["100", "usd", "eur", "2024-03-01"]) }
           .to output("100.00 USD = 90.00 EUR\n").to_stdout
@@ -28,7 +28,7 @@ RSpec.describe Matheus::ConvertCurrency do
         command = described_class.new
         today = Date.new(2024, 3, 7)
         allow(Date).to receive(:today).and_return(today)
-        stub_currency_api("2024-03-07", "usd", { "eur" => 0.92 })
+        stub_currency_api("2024-03-07", "usd", {"eur" => 0.92})
 
         expect { command.call(["usd", "eur"]) }
           .to output("1.00 USD = 0.92 EUR\n").to_stdout
@@ -70,7 +70,7 @@ RSpec.describe Matheus::ConvertCurrency do
         command = described_class.new
         today = Date.new(2024, 3, 7)
         allow(Date).to receive(:today).and_return(today)
-        stub_currency_api("2024-03-07", "usd", { "eur" => nil })
+        stub_currency_api("2024-03-07", "usd", {"eur" => nil})
 
         result = command.call(["100", "usd", "eur"])
         expect(result.error).to eq("Conversion rate from USD to EUR not found")
@@ -92,8 +92,8 @@ RSpec.describe Matheus::ConvertCurrency do
       stub_request(:get, "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@#{date}/v1/currencies/#{currency}.min.json")
         .to_return(
           status: 200,
-          body: { currency => rates }.to_json,
-          headers: { "Content-Type" => "application/json" }
+          body: {currency => rates}.to_json,
+          headers: {"Content-Type" => "application/json"}
         )
     end
   end
