@@ -8,6 +8,8 @@ module Matheus
   #    $ convert-currency 100 usd eur 2024-03-06
   #    $ convert-currency usd eur  # defaults to 1
   class ConvertCurrency < Command
+    include ActiveSupport::NumberHelper
+
     def call(args)
       amount, source, target, date = parse_args(args)
 
@@ -17,7 +19,7 @@ module Matheus
 
       if rate
         converted = amount * rate
-        puts "#{amount} #{source.upcase} = #{ActiveSupport::NumberHelper.number_to_currency(converted, unit: "")} #{target.upcase}"
+        puts "#{number_to_currency(amount, unit: "")} #{source.upcase} = #{number_to_currency(converted, unit: "")} #{target.upcase}"
       else
         Failure("Conversion rate from #{source.upcase} to #{target.upcase} not found")
       end
