@@ -33,12 +33,12 @@ module Matheus
       if (amount = Float(first_arg) rescue nil) # standard:disable Style/RescueModifier
         source = args.fetch(1) { raise "Missing source currency" }
         target = args.fetch(2) { raise "Missing target currency" }
-        date = Date.parse(args.fetch(3, Date.today))
+        date = Date.parse(args.fetch(3, Date.today.to_s))
       else
         amount = 1.0
         source = first_arg
         target = args.fetch(1) { raise "Missing target currency" }
-        date = Date.parse(args.fetch(2, Date.today))
+        date = Date.parse(args.fetch(2, Date.today.to_s))
       end
 
       [amount, source, target, date]
