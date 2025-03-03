@@ -54,6 +54,14 @@ $ puts 10.days.ago
 2024-08-17 15:50:11 -0300
 ```
 
+### [`quick-commit`](./lib/matheus/quick_commit.rb)
+
+Commits the staged changes with a generated commit message.
+
+```sh
+$ quick-commit
+```
+
 ## Contributing
 
 Probably not accepting contributions at the moment, but feel free to open an issue if you have any ideas or suggestions.
