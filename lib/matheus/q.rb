@@ -10,11 +10,11 @@ module Matheus
   class Q < Command
     BASE_PROMPT = "Answer this question in a short and concise way. You can use markdown in the response: "
 
-    def call(question)
+    def call(*question, skip_cache: false)
       question = question.join(" ")
       existing_entry = search_question_in_history(question)
 
-      if existing_entry && use_existing_answer?
+      if existing_entry && use_existing_answer?(skip_cache)
         answer = existing_entry["answer"]
       else
         answer = ask_llm(question)
@@ -67,7 +67,9 @@ module Matheus
       load_history.reverse.find { |entry| entry["question"].downcase.strip == question.downcase.strip }
     end
 
-    def use_existing_answer?
+    def use_existing_answer?(skip_cache)
+      return false if skip_cache
+
       prompt = TTY::Prompt.new
       prompt.yes?("An existing answer was found. Do you want to use it?") do |q|
         q.default true
