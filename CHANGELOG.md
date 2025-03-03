@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.7.0]
+
+_Released 2025-03-03_
+
+- Add `quick-commit` command to commit staged changes with a generated message.
+
 ## [0.6.0]
 
 _Released 2025-01-07_
