@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    matheus (0.6.4)
+    matheus (0.7.0)
       activesupport (~> 7.2.0)
       dotenv (~> 3.1.2)
       ruby-openai (~> 7.1.0)
@@ -162,6 +162,7 @@ GEM
 PLATFORMS
   x86_64-darwin-21
   x86_64-darwin-23
+  x86_64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
