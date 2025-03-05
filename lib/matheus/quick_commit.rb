@@ -1,5 +1,4 @@
 module Matheus
-
   class QuickCommit < Command
     # Usage:
     #    $ quick-commit
@@ -9,7 +8,7 @@ module Matheus
 
       Q.call(["Please write a good one-line commit message for the following diff. Return only plain-text. Diff:\n#{diff}"], skip_cache: true)
         .on_success { |msg| confirm("Accept commit message?", return_value: msg) }
-        .on_success { |commit_message| system(%(git commit -m "#{commit_message}"), :out => :close) }
+        .on_success { |commit_message| system(%(git commit -m "#{commit_message}"), out: :close) }
     end
 
     private
