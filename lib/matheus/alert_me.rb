@@ -9,9 +9,9 @@ module Matheus
     #    Runs the command and plays a sound based on its success or failure after it finishes.
     def call(*args)
       if system(args.join(" ").presence || "true")
-        system("afplay /System/Library/Sounds/Glass.aiff")
+        system("afplay /System/Library/Sounds/Glass.aiff & true")
       else
-        system("afplay /System/Library/Sounds/Sosumi.aiff")
+        system("afplay /System/Library/Sounds/Sosumi.aiff & false")
       end
     rescue => e
       Failure(e.message)
