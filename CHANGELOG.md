@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.7.1]
+
+- Update sound playback commands to run in the background with success status
+
 ## [0.7.0]
 
 _Released 2025-03-03_
@@ -11,6 +15,7 @@ _Released 2025-03-03_
 _Released 2025-01-07_
 
 - Allow specifying values on `convert-currency` command.
+
 ```sh
 $ convert-currency 100 usd eur
 ```
