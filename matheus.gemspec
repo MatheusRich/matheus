@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   spec.add_dependency "zeitwerk", "~> 2.6.17"
-  spec.add_dependency "activesupport", "~> 7.2.0"
+  spec.add_dependency "activesupport", ">= 7.2", "< 8.2"
   spec.add_dependency "ruby-openai", "~> 7.1.0"
   spec.add_dependency "tty-markdown", "~> 0.7.2"
   spec.add_dependency "tty-table", "~> 0.12.0"
