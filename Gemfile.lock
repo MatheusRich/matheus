@@ -39,18 +39,18 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     event_stream_parser (1.0.0)
-    faraday (2.14.2)
+    faraday (2.14.3)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
     faraday-multipart (1.1.0)
       multipart-post (~> 2.0)
-    faraday-net_http (3.4.2)
+    faraday-net_http (3.4.4)
       net-http (~> 0.5)
     hashdiff (1.1.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
-    json (2.19.5)
+    json (2.19.9)
     kramdown (2.4.0)
       rexml
     language_server-protocol (3.17.0.3)
