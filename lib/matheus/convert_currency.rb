@@ -32,7 +32,7 @@ module Matheus
     def parse_args(args)
       first_arg = args.fetch(0) { raise "Missing amount or source currency" }
 
-      if (amount = Float(first_arg) rescue nil) # standard:disable Style/RescueModifier
+      if (amount = Float(first_arg, exception: false))
         source = args.fetch(1) { raise "Missing source currency" }
         target = args.fetch(2) { raise "Missing target currency" }
         date = Date.parse(args.fetch(3, Date.today.to_s))

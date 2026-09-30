@@ -21,7 +21,7 @@ module Matheus
         save_qa(question, answer)
       end
 
-      answer.tap { |it| print_markdown(it) }
+      answer.tap { |text| print_markdown(text) }
     rescue => e
       Failure(e.message)
     end
