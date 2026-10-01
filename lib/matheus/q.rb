@@ -1,4 +1,4 @@
-require "openai"
+require "ruby_llm"
 require "tty-markdown"
 require "tty-prompt"
 require "json"
@@ -31,26 +31,16 @@ module Matheus
     def ask_llm(question)
       raise "Question can't be blank." if question.blank?
 
-      response = client.chat(
-        parameters: {
-          model: "gpt-4o-mini",
-          messages: [{role: "user", content: "#{BASE_PROMPT}#{question}"}]
-        }
-      )
-
-      raise response["error"]["message"] if response.has_key?("error")
-
-      response.dig("choices", 0, "message", "content")
-    rescue Faraday::ClientError => error
-      raise error.response_body.dig("error", "message") || error
+      chat.ask("#{BASE_PROMPT}#{question}").content
     end
 
     def print_markdown(text)
       puts TTY::Markdown.parse(text)
     end
 
-    def client
-      OpenAI::Client.new(access_token: ENV.fetch("OPENAI_API_KEY"))
+    def chat
+      RubyLLM.configure { |config| config.openai_api_key = ENV.fetch("OPENAI_API_KEY") }
+      RubyLLM.chat(model: "gpt-5.4-nano")
     end
 
     def save_qa(question, answer)
