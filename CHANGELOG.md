@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.8.0]
+
+- Replace `ruby-openai` with `ruby_llm` in `q`.
+- Change the `q` model from `gpt-4o-mini` to `gpt-5.4-nano`.
+- Fix the `q` errors that occur when json 3.0 is installed.
+
 ## [0.7.1]
 
 - Update sound playback commands to run in the background with success status
