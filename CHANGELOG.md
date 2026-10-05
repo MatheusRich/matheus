@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.9.0]
+
 - Add `awake-for` command to keep the Mac awake for a given duration.
 
 ## [0.8.0]
