@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Add `awake-for` command to keep the Mac awake for a given duration.
+
 ## [0.8.0]
 
 - Replace `ruby-openai` with `ruby_llm` in `q`.

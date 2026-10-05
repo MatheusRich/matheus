@@ -15,6 +15,15 @@ $ alert-me 'sleep 1 && echo "Done!"'
 Done!
 ```
 
+### [`awake-for`](./lib/matheus/awake_for.rb)
+
+Keeps the Mac awake for the given duration, using `caffeinate`.
+
+```sh
+$ awake-for 1h30m
+Staying awake until 15:30. Press Ctrl-C to stop.
+```
+
 ### [`convert-currency`](./lib/matheus/convert_currency.rb)
 
 ```sh
